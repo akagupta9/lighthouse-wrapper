@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "noImplicitReturns": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "declaration": true,
+      "allowJs": false,
+      "baseUrl": "./test",
+      "outDir": "./dist",
+      "types": ["node", "webdriverio/async", "@wdio/mocha-framework", "@wdio/devtools-service"]
+      
+    },
+    "compileOnSave": true,
+
+  }
+  
