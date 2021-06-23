@@ -4,37 +4,24 @@
   "description": "Learning Webdriver Io",
   "main": "index.js",
   "scripts": {
-    "cache-clean": "npm cache clean --force",
-    "clean": "gulp clean:dist",
-    "copy-resource": "gulp copy:resource",
+    "start": "ts-node ./auditSite.ts",
     "test": "npx wdio ./wdio.conf.js",
     "generate-report": "allure generate --clean allure-results"
   },
   "author": "Akanksha Gupta",
   "license": "",
   "devDependencies": {
-    "@types/chai": "^4.2.15",
-    "@types/mocha": "^8.2.1",
-    "@wdio/allure-reporter": "^7.7.0",
-    "@wdio/cli": "^7.7.2",
-    "@wdio/devtools-service": "^7.7.4",
-    "@wdio/local-runner": "^7.7.2",
-    "@wdio/mocha-framework": "^7.7.2",
-    "@wdio/selenium-standalone-service": "^7.7.0",
-    "@wdio/spec-reporter": "^7.7.0",
-    "chai": "^4.3.0",
-    "chromedriver": "^90.0.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "install": "^0.13.0",
     "npm": "^7.15.1",
     "ts-node": "^10.0.0",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.3",
-    "wdio-chromedriver-service": "^7.1.0"
+    "typescript": "^3.3.3"
   },
   "dependencies": {
+    "chrome-launcher": "^0.14.0",
     "gulp-cli": "^2.3.0",
-    "xlsx": "^0.17.0"
+    "lighthouse": "^8.0.0"
   }
 }
