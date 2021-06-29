@@ -11,7 +11,7 @@
       "allowJs": false,
       "baseUrl": "./test",
       "outDir": "./dist",
-      "types": ["node", "webdriverio/async", "@wdio/mocha-framework"]
+      "types": ["node"]
       
     },
     "compileOnSave": true,

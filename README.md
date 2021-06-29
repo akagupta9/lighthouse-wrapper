@@ -1,12 +1,19 @@
-# WebdriverIO_E2E
+Are you manually checking lighthouse report for each and every URL..?
 
-jsconfig.json - This file has config for autocomplete feature realted to Vs for Webdriver IO and mocha.
+If Yes, You can try this small utility that is just a wrapper over npm lighthouse to make your process easy.
 
-Plugins Used for VS Code -
-1. Intellij
-2. Mocha Test Snippet
-3. Mocha Test Explorer
+* Data Source *
+1. Inside ./resources/data.json , You can kept your URL and page name that you want to give.
 
+* How to run *
+1. open your terminal at root directory and hit - * npm run start *
+2. wait till execution completed.
+3. Now Go to ./Reports/{latest date and time}
+4. refer you report corresponding to each URL
 
-Running particular Package -
-wdio wdio.conf.js --suite signUp
+*Future Scopes*
+1. You can include jest/mocha related test cases to verify a certain section of properties for which you are looking as high priority
+2. You can include this as a jenkins pipeline and make it scheduled (Add email capabilities to it )
+
+   >>>> Zero touch automation for performance check.
+

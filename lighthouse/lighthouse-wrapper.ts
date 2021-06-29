@@ -5,22 +5,16 @@ import dataContent from "../resources/data.json";
 import lighthouse from "lighthouse";
 
 export class LightHouseWrapper {
-  private currentDateTime = new Date().getTime();
-  private resourceFilePath = join(process.cwd(), "./resources/data.json");
+  private currentDateTime = new Date().toISOString();
   private reportFolder = join(process.cwd(), `Reports/${this.currentDateTime}`);
   private chrome: any;
 
   async auditSite(): Promise<void> {
-    await this.makeReportDirectory();
+    await this.setup();
     let urls = await this.getUrls();
-    await this.setChrome();
     let options = await this.getBrowserConfig();
     await this.triggerLightHouseAuditAndGetResults(urls, options);
-    await this.killChrome();
-    // console.log(
-    //   "Performance score was",
-    //   runnerResult.lhr.categories.performance.score * 100
-    // );
+    await this.teardown();
   }
 
   async triggerLightHouseAuditAndGetResults(
@@ -37,6 +31,11 @@ export class LightHouseWrapper {
     }
   }
 
+  async setup(): Promise<void> {
+    await this.makeReportDirectory();
+    this.chrome = await launch({ chromeFlags: ["--headless"] });
+  }
+
   async getUrls(): Promise<{}[]> {
     return dataContent.APP_NAME;
   }
@@ -51,17 +50,13 @@ export class LightHouseWrapper {
     }
   }
 
-  async setChrome(): Promise<void> {
-    this.chrome = await launch({ chromeFlags: ["--headless"] });
-  }
-
-  async killChrome(): Promise<void> {
+  async teardown(): Promise<void> {
     await this.chrome.kill();
   }
 
   async getBrowserConfig(): Promise<any> {
     const options = {
-      logLevel: "silent",
+      logLevel: "info",
       output: "html",
       port: this.chrome.port,
     };

@@ -4,15 +4,11 @@
   "description": "Learning Webdriver Io",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./auditSite.ts",
-    "test": "npx wdio ./wdio.conf.js",
-    "generate-report": "allure generate --clean allure-results"
+    "start": "ts-node ./auditSite.ts"
   },
   "author": "Akanksha Gupta",
   "license": "",
   "devDependencies": {
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
     "install": "^0.13.0",
     "npm": "^7.15.1",
     "ts-node": "^10.0.0",
@@ -21,7 +17,6 @@
   },
   "dependencies": {
     "chrome-launcher": "^0.14.0",
-    "gulp-cli": "^2.3.0",
     "lighthouse": "^8.0.0"
   }
 }
