@@ -17,19 +17,32 @@ export class LightHouseWrapper {
     await this.teardown();
   }
 
+
+
+
+
+
+
   async triggerLightHouseAuditAndGetResults(
-    urls: {}[],
+    testSource: {}[],
     options: any
   ): Promise<void> {
-    for (let index = 0; index < urls.length; index++) {
-      let runnerResult = await lighthouse(urls[index]["url"], options);
+    for (let index = 0; index < testSource.length; index++) {
+      let runnerResult = await lighthouse(testSource[index]["url"], options);
       let reportHtml = await runnerResult.report;
       await writeFileSync(
-        `${this.reportFolder}/${urls[index]["pageName"].trim()}.html`,
+        `${this.reportFolder}/${testSource[index]["pageName"].trim()}.html`,
         reportHtml
       );
     }
   }
+
+
+
+
+
+
+
 
   async setup(): Promise<void> {
     await this.makeReportDirectory();

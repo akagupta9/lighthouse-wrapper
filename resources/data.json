@@ -11,26 +11,6 @@
         {
             "pageName": "Page 3",
             "url": "https://www.npmjs.com/package/lighthouse"
-        },
-        {
-            "pageName": "Page 4",
-            "url": "https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/readme.md#using-programmatically"
-        },
-        {
-            "pageName": "Page 5",
-            "url": "https://www.npmjs.com/package/lighthouse#using-lighthouse-in-chrome-devtools"
-        },
-        {
-            "pageName": "Page 6",
-            "url": "https://www.npmjs.com/package/lighthouse#using-the-node-cli"
-        },
-        {
-            "pageName": "Page 7",
-            "url": "https://www.npmjs.com/package/lighthouse#plugins"
-        },
-        {
-            "pageName": "Page 8",
-            "url": "https://stackoverflow.com/questions/39679505/using-await-outside-of-an-async-function"
         }
     ]
 }
