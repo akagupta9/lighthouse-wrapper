@@ -17,12 +17,6 @@ export class LightHouseWrapper {
     await this.teardown();
   }
 
-
-
-
-
-
-
   async triggerLightHouseAuditAndGetResults(
     testSource: {}[],
     options: any
@@ -36,12 +30,6 @@ export class LightHouseWrapper {
       );
     }
   }
-
-
-
-
-
-
 
 
   async setup(): Promise<void> {
